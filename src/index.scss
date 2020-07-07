@@ -1,0 +1,81 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.Y138Sy7AZXM7-pYhD6qhGAHaFJ%26pid%3DApi&f=1');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  min-height: 100vh;
+  // background: yellow;
+}
+
+header{
+  padding: 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  .left-menu{
+    display: flex;
+
+    .logo{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+    }
+
+    .city{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 20px;
+    }
+  }
+
+  .right-menu{
+    display: flex;
+
+    .user-img{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .user-dropdown{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 20px;
+      color: #fff;
+    }
+    .post-btn{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 20px;
+      background: rgba(60,169,39,1);
+      border-radius: 5px;
+      font-weight: 300;
+      text-transform: capitalize;
+      color: #fff;
+    }
+  }
+}
+
+
+
+.lnr-chevron-down {
+  color: #fff;
+  font-size: 1rem;
+  margin-left: 5px;
+  /* To get crisp results, use sizes that are
+  a multiple of 20; because Linearicons was
+  designed on a 20 by 20 grid. */
+}
+
+// linear-gradient(135deg, rgba(60,196,39,.3) 0%,rgba(56,165,31,.3) 37%,rgba(136,229,123,.3) 99%,rgba(136,229,123,.3) 99%,rgba(32,124,202,.3) 100%),
