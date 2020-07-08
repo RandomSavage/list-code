@@ -38,21 +38,23 @@ export default class Header extends Component {
   }
   render() {
     return (
-      <div>
-        <h1>Connecting the Healing of the Nation<br />Everywhere</h1>
-        <section className={'links'}>
-          {this.loopCategories()}
-        </section>
-        <section className={'trending'}>
-          <input type={`text`} name={`search`} className={`search`} />
-          <div className={`title`}>
-            <span class="lnr lnr-clock"></span>
-            Trending Now
-          </div>
-          <div className={`trending-tags`}>
-            {this.loopTags()}
-          </div>
-        </section>
+      <div className={`container`}>
+        <div className={`home`}>
+          <h1>Connecting the Healing of the Nation</h1>
+          <section className={'links'}>
+            {this.loopCategories()}
+          </section>
+          <section className={'trending'}>
+            <input type={`text`} name={`search`} className={`search`} />
+            <div className={`title`}>
+              <span class="lnr lnr-clock"></span>
+              Trending Now
+            </div>
+            <div className={`trending-tags`}>
+              {this.loopTags()}
+            </div>
+          </section>
+        </div>
       </div>
     )
   }

@@ -11,25 +11,26 @@ export default class Header extends Component {
   }
   render() {
     return (
-      <header>
-        <div className={'left-menu'}>
-          <div className={'logo'}>Craigslist</div>
-          <div className={'city'}>
-            Tennessee
-            <span className="lnr lnr-chevron-down"></span>
+      <div className={`container`}>
+        <header>
+          <div className={'left-menu'}>
+            <div className={'logo'}>Craigslist</div>
+            <div className={'city'}>
+              Tennessee
+              <span className="lnr lnr-chevron-down"></span>
+            </div>
           </div>
-        </div>
 
-        <div className={'right-menu'}>
-          <div className={'user-img'}>img</div>
-          <div className={'user-dropdown'}>
-            my account
-            <span className="lnr lnr-chevron-down"></span>
+          <div className={'right-menu'}>
+            <div className={'user-img'}>img</div>
+            <div className={'user-dropdown'}>
+              my account
+              <span className="lnr lnr-chevron-down"></span>
+            </div>
+            <div className={'post-btn'}>post classifieds</div>
           </div>
-          <div className={'post-btn'}>post classifieds</div>
-        </div>
-
-      </header>
+        </header>
+      </div>
     )
   }
 }
