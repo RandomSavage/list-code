@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ReactDom from 'react-dom';
 
 
-export default class Header extends Component {
+export default class Home extends Component {
   constructor() {
     super()
     this.state = {
