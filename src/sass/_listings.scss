@@ -1,70 +1,26 @@
-.home{
-  h1{
-    font-size: 4rem;
-    text-align: center;
-    padding: 100px 0;
-    color: #fff;
-  }
-  .links{
-    background: rgba(0,0,0,.7);
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-gap: 20px;
-    padding: 20px;
-    margin-bottom: 70px;
-    .categories{
-      .title{
-        color: #fff;
-        font-size: 1.3rem;
+.listings-page{
+  background: #fff;
+
+  #filter{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    .form-group{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      label{
         font-weight: 700;
-        margin-bottom: 1rem;
       }
-      .group-links{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        .link{
-          color: #fff;
-          font-size: .7rem;
-          font-weight: 300;
-          text-decoration: none;
-          margin-bottom: .5rem;
-          &:hover{
-            color: red;
-          }
-        }
+      select{
+        background: #fff;
+        border-radius: 5px;
+        padding: 10px;
+        color: #1b1b1b;
       }
     }
   }
-  .trending{
-    max-width: 800px;
-    margin: 0 auto;
-    .search{
-      width: 100%;
-      font-size: 2rem;
-      border-radius: 5px;
-      border: 1px solid #0000;
-      padding: 10px;
-    }
-    .title{
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #000;
-      text-align: center;
-      padding: 20px;
-      text-transform: uppercase;
-    }
-    .trending-tags{
-      .tag{
-        padding: 10px 20px;
-        border-radius: 45px;
-        border: 2px solid #fff;
-        display: inline-block;
-        margin: 0 20px 20px;
-        &:hover{
-          background: black;
-          color: white;
-        }
-      }
-    }
+  #list-view{
+
   }
 }
