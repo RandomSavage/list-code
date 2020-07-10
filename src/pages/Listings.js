@@ -17,16 +17,15 @@ export default class Listings extends Component {
         <div className={`container`}>
           <section id="filter">
             <div className="form-group price">
-              <label>Min-Price</label>
-              <select name="min-price" className={`min-price`}>
-
-                <option value="0">0</option>
-              </select>
-              <label>Max-Price</label>
-              <select name="max-price" className={`max-price`}>
-
-                <option value="1000">1000</option>
-              </select>
+              <label>Price</label>
+              <div className={`min-max`}>
+                <select name="min-price" className={`min-price`}>
+                  <option value="0">0</option>
+                </select>
+                <select name="max-price" className={`max-price`}>
+                  <option value="1000">1000</option>
+                </select>
+              </div>
             </div>
             <div className="form-group make">
               <label>Make</label>
