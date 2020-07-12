@@ -1,53 +1,116 @@
 .listings-page{
-  background: #fff;
+  background: transparent;
 
   #filter{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     padding: 50px 0;
-    .form-group{
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      label{
-        font-size: .8rem;
-        font-weight: 500;
-        margin-bottom: .8rem;
-      }
-      select{
-        background: #fff;
-        border-radius: 5px;
-        font-size: 1.3rem;
-        margin-right: 20px;
-        min-width: 100px;
-        border: 2px solid #ADBED2;
-        color: #1b1b1b;
-        margin-right: 20px;
-      }
-      &.button{
-        flex-direction: row;
-        align-items: flex-end;
-      }
-      .primary-btn{
-        padding: 10px 20px;
-        background: #2A7DDD;
-      }
-      .reset-btn{
+  }
+  .form-group{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    label{
+      font-size: .8rem;
+      font-weight: 500;
+      margin-bottom: .8rem;
+    }
+    select{
+      background: #fff;
+      border-radius: 5px;
+      font-size: 1.3rem;
+      margin-right: 20px;
+      min-width: 100px;
+      border: 2px solid #ADBED2;
+      color: #1b1b1b;
+      margin-right: 20px;
+    }
+    &.button{
+      flex-direction: row;
+      align-items: flex-end;
+    }
+    .primary-btn{
+      padding: 10px 20px;
+      background: #2A7DDD;
+    }
+    .reset-btn{
+      background: #F7F8FA;
+      &:hover{
         background: #F7F8FA;
-        &:hover{
-          background: #F7F8FA;
-        }
       }
-      .primary-btn, .reset-btn{
-        padding: 10px 20px;
-        margin-right: 20px;
-        border-radius: 5px;
-        cursor: pointer;
-      }
+    }
+    .primary-btn, .reset-btn{
+      padding: 10px 20px;
+      margin-right: 20px;
+      border-radius: 5px;
+      cursor: pointer;
     }
   }
   #list-view{
-
+    // background: #F7F8FA;
+      padding: 20px 0;
+    .white-box{
+      background: transparent;
+      padding: 20px;
+    }
+    .change-view{
+      display: flex;
+      flex-direction: row;
+    }
+    .all-items{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px 20px;
+      margin: 20px auto;
+      .item{
+        border: 4px solid red;
+        border-radius: 5px;
+        overflow: hidden;
+        height: 100%;
+        width: inherit;
+        .img{
+          position: relative;
+          height: 250px;
+          width: 100%;
+          // background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs-media-cache-ak0.pinimg.com%2F736x%2Fdc%2Fab%2F4d%2Fdcab4de9c8c61d24878751663bd49141--ital-food-recipes-ital-food-rasta.jpg&f=1&nofb=1');
+          // background-size: cover;
+          // background-position: center;
+          // background-repeat: no-repeat;
+          // padding: 10px;
+          img{
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+          .price{
+            position: absolute;
+            font-size: .8rem;
+            padding: 5px 10px;
+            border: 1px solid green;
+            border-radius: 3px;
+            margin: 8px;
+            background: #fff;
+          }
+        }
+        .details{
+          padding: 10px;
+          background: #fff;
+          h5{
+            color: #27292D;
+            font-size: .9rem;
+            line-height: 1.5;
+            margin-bottom: 5px;
+          }
+          h6{
+            color: #565D68;
+            font-size: .7rem;
+          }
+        }
+      }
+    }
   }
+
 }

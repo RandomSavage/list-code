@@ -1,0 +1,11 @@
+
+.likkle-magen{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+h1 {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 5rem;
+}

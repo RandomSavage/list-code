@@ -10,20 +10,20 @@ export default class Listings extends Component {
     }
   }
   viewLoop = () => {
-    let itemDirectory = [{price: '8920', img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.oRsEFTzY9tftKsDjpQmapwHaFj%26pid%3DApi&f=1', title: 'BMW', city: 'ten-mile'}, {price: '4420', img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs-media-cache-ak0.pinimg.com%2F736x%2Fdc%2Fab%2F4d%2Fdcab4de9c8c61d24878751663bd49141--ital-food-recipes-ital-food-rasta.jpg&f=1&nofb=1', title: 'BMW', city: 'Nyc'},{price: '8920', img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.hA0NT8xm9Rfbc1f1GlnbAwHaE8%26pid%3DApi&f=1', title: 'BMW', city: 'Amsterdam'},{price: '8920', img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.gzCISLGnF136A2xit-KHDQHaE7%26pid%3DApi&f=1', title: 'BMW', city: 'Morant Bay'}];
-    return itemDirectory.map((entry, index) => {
+    let itemDirectory = [1,2,3,4,5,6,7,8];
+    return itemDirectory.map((entry) => {
       console.log(itemDirectory)
       return (
         <div className={`item`}>
           <div className={`img`}>
             <div className={`price`}>
-              {entry.price}
+              $1
             </div>
-            <img src={entry.img} alt={"ital food"} />
+
           </div>
           <div className={`details`}>
-            <h5>{entry.title}</h5>
-            <h6>{entry.city}</h6>
+            <h5>title</h5>
+            <h6>city</h6>
           </div>
         </div>
       )
