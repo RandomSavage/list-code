@@ -98,15 +98,29 @@
         .details{
           padding: 10px;
           background: #fff;
+          position: relative;
+          .lnr-diamond {
+            color: #0F52BA;
+            font-size: 1.4rem;
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            &:hover{
+              color: salmon;
+              cursor: pointer;
+            }
+          }
           h5{
             color: #27292D;
             font-size: .9rem;
             line-height: 1.5;
             margin-bottom: 5px;
+            text-transform: capitalize;
           }
           h6{
             color: #565D68;
             font-size: .7rem;
+            text-transform: capitalize;
           }
         }
       }

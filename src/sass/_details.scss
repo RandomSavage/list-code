@@ -1,11 +1,7 @@
-
-.likkle-magen{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-h1 {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  font-size: 5rem;
+.lnr-chevron-left {
+  color: #0F52BA;
+  font-size: 40px;
+  /* To get crisp results, use sizes that are
+  a multiple of 20; because Linearicons was
+  designed on a 20 by 20 grid. */
 }

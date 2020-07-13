@@ -23,5 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # weirdStuff
-
+/weirdStuff
 capture.js

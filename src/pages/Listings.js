@@ -22,7 +22,7 @@ export default class Listings extends Component {
             <img src={entry.img} alt={"ital food"} />
           </div>
           <div className={`details`}>
-            <h5>{entry.title}</h5>
+            <h5>{entry.title} <span class="lnr lnr-diamond"></span></h5>
             <h6>{entry.city}</h6>
           </div>
         </div>
