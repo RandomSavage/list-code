@@ -9,22 +9,6 @@ export default class Details extends Component {
       name: 'Joe'
     }
   }
-  viewDetails = () => {
-    let detailsDirectory = [{spin: '12xc12cd2', mileage: '74,322' , Transmission: 'manual'},{win: '1762eh64j27x', mileage: '19,205' , Transmission: 'auto'},{fin: '354g964372l', mileage: '45,499' , Transmission: 'auto'}];
-    return detailsDirectory.map((entry, detail) => {
-      for(const detail in entry) {
-        return detail;
-      }
-
-
-      return (
-        <div className={`info`}>
-          <label>{detail}</label>
-          <h5>{entry[detail]}</h5>
-        </div>
-      )
-    })
-  }
   render() {
     const {match, location, history} = this.props;
 
@@ -40,43 +24,79 @@ export default class Details extends Component {
               <a href="#">More Ads By User</a>
               <a href="#">Print</a>
               <a href="#">Share</a>
-              <a href="#">Contact Sellerr</a>
+              <a href="#">Contact Seller <span className="lnr lnr-chevron-down"></span></a>
             </nav>
           </section>
           <section>
-            <div className={`media-column`}>
-              <div className={`gallery`}>
-                <div className={`slider`}>
-                  <div className={`main-image`}>
-                    <div className={`left-arrow`}>
-                      <span class="lnr lnr-chevron-left"></span>
+            <div className={`content`}>
+              <div className={`media-column`}>
+                <div className={`gallery`}>
+                  <div className={`slider`}>
+                    <div className={`main-image`}>
+                      <div className={`left-arrow`}>
+                        <span className="lnr lnr-chevron-left"></span>
+                      </div>
+                      <div className={`right-arrow`}>
+                        <span className="lnr lnr-chevron-right"></span>
+                      </div>
                     </div>
-                    <div className={`right-arrow`}>
-                      <span class="lnr lnr-chevron-right"></span>
+                  </div>
+                  <div className={`thumb-nails`}>
+                    <div className={`thumb-img`} style={{"backgroundImage" : "url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.EAh6bnKmzD1x3VDh49SxqQHaE7%26pid%3DApi&f=1')"}}>
+                    </div>
+                    <div className={`thumb-img`} style={{"backgroundImage" : "url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.EAh6bnKmzD1x3VDh49SxqQHaE7%26pid%3DApi&f=1')"}}>
+                    </div>
+                    <div className={`thumb-img`} style={{"backgroundImage" : "url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.EAh6bnKmzD1x3VDh49SxqQHaE7%26pid%3DApi&f=1')"}}>
+                    </div>
+                    <div className={`thumb-img`} style={{"backgroundImage" : "url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.EAh6bnKmzD1x3VDh49SxqQHaE7%26pid%3DApi&f=1')"}}>
+                    </div>
+                    <div className={`thumb-img`} style={{"backgroundImage" : "url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.EAh6bnKmzD1x3VDh49SxqQHaE7%26pid%3DApi&f=1')"}}>
+                    </div>
+                    <div className={`thumb-img`} style={{"backgroundImage" : "url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.EAh6bnKmzD1x3VDh49SxqQHaE7%26pid%3DApi&f=1')"}}>
                     </div>
                   </div>
                 </div>
-                <div className={`thumb-nails`}>
-                  <div className={`thumb-img`}>
-                    <img href={`#`} alt={`picture`} />
+              </div>
+              <div className={`details-column`}>
+                <div className={`date`}>
+                  Posted: February 28
+                </div>
+                <h3 className={`title`}>Black 2020 BMW 535i, 4DR Leather Audio</h3>
+                <h4 className={`price`}>$46,298</h4>
+                <div className={`more-details`}>
+                    <div className={`info`}>
+                      <label>vin</label>
+                      <h5>hjkkjjjb</h5>
+                    </div>
+                    <div className={`info`}>
+                      <label>vin</label>
+                      <h5>hjkkjjjb</h5>
+                    </div>
+                    <div className={`info`}>
+                      <label>vin</label>
+                      <h5>hjkkjjjb</h5>
+                    </div>
+                    <div className={`info`}>
+                      <label>vin</label>
+                      <h5>hjkkjjjb</h5>
+                    </div>
+                    <div className={`info`}>
+                      <label>vin</label>
+                      <h5>hjkkjjjb</h5>
+                    </div>
+                    <div className={`info`}>
+                      <label>vin</label>
+                      <h5>hjkkjjjb</h5>
+                    </div>
+                </div>
+                  <div className={`description`}>
+                    <label>Description</label>
+                    <p>Elit pinterest voluptate air plant seitan sartorial. Flannel +1 vice blog hell of, sustainable reprehenderit subway tile banh mi drinking vinegar migas taiyaki ut stumptown knausgaard. Meh plaid ut ut, pitchfork forage sriracha. Selvage brooklyn sriracha vape williamsburg chia viral. Gluten-free chia ut iceland ullamco. Vinyl farm-to-table cardigan trust fund VHS.</p>
+                    <p>Aliquip dolor vape forage mixtape consequat, viral migas kinfolk roof party humblebrag consectetur ethical. Laboris vegan non, selfies thundercats dolore food truck kogi lorem shabby chic elit. Cillum trust fund four loko quinoa try-hard air plant. Af meditation palo santo, est disrupt pariatur cillum chicharrones art party esse kinfolk authentic pickled aliquip.</p>
+                    <p>Vegan trust fund tattooed, +1 ea forage vice hammock kickstarter air plant YOLO. Ennui in coloring book raclette cred cray waistcoat XOXO. Cliche subway tile vinyl, normcore hammock nostrud yr irony butcher synth air plant 3 wolf moon keytar ut. Asymmetrical hot chicken pok pok labore occupy. Enamel pin hot chicken adipisicing sint, keytar raclette glossier YOLO disrupt mollit.</p>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className={`details-column`}>
-              <div className={`date`}>
-                Posted: February 28
-              </div>
-              <h3>Black 2020 BMW 535i, 4DR Leather Audio</h3>
-              <h4 className={`price`}>$46,298</h4>
-              <div className={`more-details`}>
-                {this.viewDetails()}
-                <div className={`description`}>
-                  <label>Description</label>
-                  <p>This is where the Description goes</p>
-                </div>
-              </div>
-            </div>
           </section>
         </div>
       </div>

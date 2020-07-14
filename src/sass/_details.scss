@@ -1,7 +1,160 @@
-.lnr-chevron-left {
-  color: #0F52BA;
-  font-size: 40px;
-  /* To get crisp results, use sizes that are
-  a multiple of 20; because Linearicons was
-  designed on a 20 by 20 grid. */
+.details-page{
+  background: transparent;
+  .submenu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 0;
+    .direction{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .prev{
+        color: #0F52BA;
+        padding: 10px;
+        border-right: 1px solid grey;
+      }
+      .next{
+        color: #0F52BA;
+        padding: 10px;
+      }
+    }
+    .sub-links{
+      background: transparent;
+      padding: 20px 10px;
+      a{
+        text-decoration: none;
+        padding: 10px;
+        border-left: 1px solid grey;
+        color: #0F52BA;
+      }
+      a:first-child{
+        border-left: 0px;
+      }
+      a:last-child{
+        border: 1px solid grey;
+        padding: 10px 12px;
+        .lnr-chevron-down{
+          color: grey;
+        }
+      }
+    }
+  }
+  .content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .media-column{
+      // background: salmon;
+      .gallery{
+        // background: orange;
+        .slider{
+          // background: green;
+          height: 400px;
+          width: inherit;
+          .main-image{
+            height: 100%;
+            width: 100%;
+            background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.kHmx136bszkXJS1m5oXDSQHaEo%26pid%3DApi&f=1');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            .left-arrow{
+              position: absolute;
+              top: 200px;
+              left: 0;
+              .lnr-chevron-left {
+                color: #1b1b1b;
+                font-size: 1.7rem;
+                font-weight: 700;
+                &:hover{
+                  cursor: pointer;
+                  color: #fff;
+                }
+              }
+            }
+            .right-arrow{
+              position: absolute;
+              top: 200px;
+              right: 0;
+              .lnr-chevron-right {
+                color: #1b1b1b;
+                font-size: 1.7rem;
+                font-weight: 700;
+                &:hover{
+                  cursor: pointer;
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+        .thumb-nails{
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          .thumb-img{
+            height: 100px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+          }
+        }
+      }
+    }
+    .details-column{
+      padding-left: 20px;
+      background: rgba(255,255,255,.5);
+      .date{
+        font-size: .8rem;
+        color: #424242;
+        margin-bottom: 15px;
+      }
+      .title{
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+      .price{
+        color: green;
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+      label{
+        font-weight: 700;
+        font-size: .7rem;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        display: block;
+      }
+      .more-details{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 15px;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #1B1B1B;
+        .info{
+
+
+          h5{
+            font-size: .9rem;
+            font-weight: 300;
+            text-transform: capitalize;
+          }
+        }
+      }
+      .description{
+        width: inherit;
+        p{
+          color: #424242;
+          font-size: .9rem;
+          line-height: 1.5rem;
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+  }
 }
