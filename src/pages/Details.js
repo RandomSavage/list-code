@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDom from 'react-dom';
-
+import Gallery from './components/Gallery';
 
 export default class Details extends Component {
   constructor() {
@@ -30,32 +30,7 @@ export default class Details extends Component {
           <section>
             <div className={`content`}>
               <div className={`media-column`}>
-                <div className={`gallery`}>
-                  <div className={`slider`}>
-                    <div className={`main-image`}>
-                      <div className={`left-arrow`}>
-                        <span className="lnr lnr-chevron-left"></span>
-                      </div>
-                      <div className={`right-arrow`}>
-                        <span className="lnr lnr-chevron-right"></span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={`thumb-nails`}>
-                    <div className={`thumb-img`} style={{"backgroundImage" : "url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.EAh6bnKmzD1x3VDh49SxqQHaE7%26pid%3DApi&f=1')"}}>
-                    </div>
-                    <div className={`thumb-img`} style={{"backgroundImage" : "url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.EAh6bnKmzD1x3VDh49SxqQHaE7%26pid%3DApi&f=1')"}}>
-                    </div>
-                    <div className={`thumb-img`} style={{"backgroundImage" : "url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.EAh6bnKmzD1x3VDh49SxqQHaE7%26pid%3DApi&f=1')"}}>
-                    </div>
-                    <div className={`thumb-img`} style={{"backgroundImage" : "url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.EAh6bnKmzD1x3VDh49SxqQHaE7%26pid%3DApi&f=1')"}}>
-                    </div>
-                    <div className={`thumb-img`} style={{"backgroundImage" : "url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.EAh6bnKmzD1x3VDh49SxqQHaE7%26pid%3DApi&f=1')"}}>
-                    </div>
-                    <div className={`thumb-img`} style={{"backgroundImage" : "url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.EAh6bnKmzD1x3VDh49SxqQHaE7%26pid%3DApi&f=1')"}}>
-                    </div>
-                  </div>
-                </div>
+                <Gallery />
               </div>
               <div className={`details-column`}>
                 <div className={`date`}>
