@@ -90,15 +90,17 @@
           }
         }
         .thumb-nails{
+          padding: 5px 0;
           display: grid;
           grid-template-columns: repeat(6, 1fr);
+          grid-gap: 5px;
           .thumb-img{
             height: 100px;
             width: 100%;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-
+            cursor: pointer;
           }
         }
       }

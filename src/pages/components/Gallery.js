@@ -27,19 +27,28 @@ export default class Gallery extends Component {
   allImgsLoop = () => {
     return this.state.allImgs.map((item, i) => {
       return(
-        <div key={i} className={`thumb-img`} style={{"backgroundImage" : `url('${item}')`}}>
+        <div key={i} onClick={this.clickedThumb.bind(null, i)} className={`thumb-img`} style={{"backgroundImage" : `url('${item}')`}}>
         </div>
       )
     })
   }
   nextBtn = () => {
-    this.setState({
-      currentIndex: this.state.currentIndex + 1
-    })
+    if(this.state.currentIndex != (this.state.allImgs.length - 1)) {
+      this.setState({
+        currentIndex: this.state.currentIndex + 1
+      })
+    }
   }
   prevBtn = () => {
+    if(this.state.currentIndex != 0) {
+      this.setState({
+        currentIndex: this.state.currentIndex - 1
+      })
+    }
+  }
+  clickedThumb = (index) => {
     this.setState({
-      currentIndex: this.state.currentIndex - 1
+      currentIndex: index
     })
   }
   render() {
