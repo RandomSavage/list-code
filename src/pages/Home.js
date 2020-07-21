@@ -1,36 +1,61 @@
 import React, {Component} from 'react';
 import ReactDom from 'react-dom';
+import axios from 'axios';
 
 
 export default class Home extends Component {
   constructor() {
     super()
     this.state = {
-      name: 'Joe'
+      categoriesData: ''
     }
   }
+  componentWillMount(){
+    const self = this;
+    // Make a request for a user with a given ID
+    axios.get('/api/categories')
+      .then(function (response) {
+        // handle success
+        self.setState({
+          categoriesData: response.data
+        }, () => {
+          console.log(self.state);
+        })
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .finally(function () {
+        // always executed
+      });
+  }
   loopCategories = () => {
-    let testArray = [1,2,3,4,5,6,7];
-    return testArray.map((item) => {
-      return(
-        <div key={item} className={`categories`}>
-          <div className={'title'}>Community</div>
-          <div className={`group-links`}>
-            <a href="#" className={`link`}>Community</a>
-            <a href="#" className={`link`}>General</a>
-            <a href="#" className={`link`}>Activities</a>
-            <a href="#" className={`link`}>Groups</a>
-            <a href="#" className={`link`}>Artists</a>
-            <a href="#" className={`link`}>Local News</a>
-            <a href="#" className={`link`}>Child Care</a>
-            <a href="#" className={`link`}>Lost and Found</a>
-            <a href="#" className={`link`}>Classes</a>
-            <a href="#" className={`link`}>Musicians</a>
-            <a href="#" className={`link`}>Events</a>
+    if(this.state.categoriesData != '') {
+      return this.state.categoriesData.map((category, i) => {
+        const loopListings = () => {
+          return category.listings.map((listing, index) => {
+            return (
+              <a href={`${category.title}/${listing.slug}`} className={`link`} key={index}>
+                {listing.name}
+              </a>
+            )
+          })
+        }
+        return(
+          <div key={i} className={`categories`}>
+            <div className={`title  ${category.title == 'resumes' ? 'point' : ''}`}>{category.title}</div>
+            <div className={`group-links ${(category.title == 'jobs' || category.title == 'housing' || category.title == 'services' || category.title == 'for sale') ? 'single-col' : ''}`}>
+              {loopListings()}
+            </div>
           </div>
-        </div>
-      )
-    })
+        )
+      })
+    } else {
+      alert('Loading');
+    }
+
   }
   loopTags = () => {
     let testTags = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
@@ -47,7 +72,7 @@ export default class Home extends Component {
           <section className={'trending'}>
             <input type={`text`} name={`search`} className={`search`} />
             <div className={`title`}>
-              <span class="lnr lnr-clock"></span>
+              <span className="lnr lnr-clock"></span>
               Trending Now
             </div>
             <div className={`trending-tags`}>

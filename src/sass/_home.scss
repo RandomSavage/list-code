@@ -8,7 +8,7 @@
   .links{
     background: rgba(0,0,0,.7);
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(9, 1fr);
     grid-gap: 20px;
     padding: 20px;
     margin-bottom: 70px;
@@ -18,16 +18,24 @@
         font-size: 1.3rem;
         font-weight: 700;
         margin-bottom: 1rem;
+        text-align: center;
+        &.point{
+          cursor: pointer;
+        }
       }
       .group-links{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        &.single-col{
+          grid-template-columns: repeat(1, 1fr);
+        }
         .link{
           color: #fff;
           font-size: .7rem;
           font-weight: 300;
           text-decoration: none;
           margin-bottom: .5rem;
+          text-align: center;
           &:hover{
             color: red;
           }

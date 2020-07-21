@@ -1,12 +1,16 @@
 const express = require('express');
 const serveStatic = require('serve-static');
 const path = require('path');
+const categoriesData = require('./data/categories.js');
 
 //create the express app
 const app = express();
 
 //create middleware to handle the serving of the app
 app.use('/', serveStatic(path.join(__dirname, 'build')));
+app.get('/api/categories', (req, res) => {
+  res.json(categoriesData);
+});
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
