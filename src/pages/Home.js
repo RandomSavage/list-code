@@ -11,9 +11,16 @@ export default class Home extends Component {
     }
   }
   componentWillMount(){
+
+  }
+  componentDidMount(){
+    const{match, history} = this.props
+    if(match.params.city == undefined){
+      history.push('/nyc')
+    }
     const self = this;
     // Make a request for a user with a given ID
-    axios.get('/api/categories')
+    axios.get(`/api/${match.params.city}/categories`)
       .then(function (response) {
         // handle success
         self.setState({
