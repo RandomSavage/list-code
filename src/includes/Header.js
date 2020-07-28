@@ -8,7 +8,7 @@ export default class Header extends Component {
     this.state = {
       name: 'Joe',
       cityDropdown: false,
-      selectedCity: 'NYC',
+      selectedCity: 'New York City',
       citiesData: []
     }
   }
@@ -17,6 +17,10 @@ export default class Header extends Component {
     // Make a request for a user with a given ID
     axios.get(`/api/cities`)
       .then(function (response) {
+        const {match, history} = self.props;
+        let city = response.data.filter((item) => {
+          return item.slug == match.params.city
+        })
         // handle success
         self.setState({
           citiesData: response.data
@@ -38,10 +42,22 @@ export default class Header extends Component {
       cityDropdown: !this.state.cityDropdown
     })
   }
+  selectCity = (city) => {
+    this.setState({
+      selectedCity: city
+    }, () => {
+      this.state.citiesData.filter((item) => {
+        return item.title == this.state.selectedCity
+      })
+      const {match, history} = this.props
+      history.push(`/$city[0].slug`)
+    })
+  }
   loopCities = () => {
+    const self = this;
     return this.state.citiesData.map((item,i) => {
       return(
-        <li key={i}>{item.title}</li>
+        <li key={i} onClick={this.selectCity.bind(null, item.title)}>{item.title}</li>
       )
     })
   }
@@ -53,7 +69,7 @@ export default class Header extends Component {
             <div className={'logo'}>Craigslist</div>
             <div className={'city-dropdown'} onClick={this.clickedCityDropdown}>
               {this.state.selectedCity}
-              <span className="lnr lnr-chevron-down"></span>
+              <span className={`lnr lnr-chevron-down ${(this.state.cityDropdown) ? 'lnr lnr-chevron-up' : 'lnr lnr-chevron-down'}`}></span>
               <div className={`scroll-area ${(this.state.cityDropdown) ? 'active' : ''}`}>
                 <ul>
                   {this.loopCities()}
