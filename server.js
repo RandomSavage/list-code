@@ -12,12 +12,23 @@ const app = express();
 app.use('/', serveStatic(path.join(__dirname, 'build')));
 
 //api
+//shows all cities available
 app.get('/api/cities', (req, res) => {
   res.json(citiesData);
 });
+//shows all categories available for a city
+app.get('/api/:city', (req, res) => {
+  res.json(categoriesData);
+});
+//This shows all the items for a city
 app.get('/api/:city/:categories', (req, res) => {
   res.json(categoriesData);
 });
+// show all the items for that listing example:electronics
+app.get('/api/:city/:categories/:listing', (req, res) => {
+  res.json(itemsData);
+});
+// show the item that was selected
 app.get('/api/:city/:categories/:listing/:item', (req, res) => {
   res.json(itemsData);
 });

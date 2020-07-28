@@ -34,11 +34,28 @@ header{
       font-size: 2rem;
     }
 
-    .city{
+    .city-dropdown{
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 15px 20px;
+      position: relative;
+      .scroll-area{
+        position: absolute;
+        background: blue;
+        top: 50px;
+        width: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        visibility: hidden;
+        &.active{
+          visibility: visible;
+        }
+        ul{
+          li{
+            padding: 15px;
+          }
+        }
     }
   }
 
