@@ -23,7 +23,8 @@ export default class Header extends Component {
         })
         // handle success
         self.setState({
-          citiesData: response.data
+          citiesData: response.data,
+          selectedCity: city[0].title
         }, () => {
           console.log(self.state);
         })
@@ -46,11 +47,11 @@ export default class Header extends Component {
     this.setState({
       selectedCity: city
     }, () => {
-      this.state.citiesData.filter((item) => {
+    let city = this.state.citiesData.filter((item) => {
         return item.title == this.state.selectedCity
       })
       const {match, history} = this.props
-      history.push(`/$city[0].slug`)
+      history.push(`/${city[0].slug}`)
     })
   }
   loopCities = () => {
@@ -69,7 +70,7 @@ export default class Header extends Component {
             <div className={'logo'}>Craigslist</div>
             <div className={'city-dropdown'} onClick={this.clickedCityDropdown}>
               {this.state.selectedCity}
-              <span className={`lnr lnr-chevron-down ${(this.state.cityDropdown) ? 'lnr lnr-chevron-up' : 'lnr lnr-chevron-down'}`}></span>
+              <span className={`lnr ${(this.state.cityDropdown) ? 'lnr lnr-chevron-up' : 'lnr lnr-chevron-down'}`}></span>
               <div className={`scroll-area ${(this.state.cityDropdown) ? 'active' : ''}`}>
                 <ul>
                   {this.loopCities()}
