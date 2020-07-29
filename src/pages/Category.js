@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDom from 'react-dom';
-
+import axios from 'axios';
 
 export default class Category extends Component {
   constructor() {
@@ -9,25 +9,48 @@ export default class Category extends Component {
       name: 'Joe'
     }
   }
+  componentWillMount() {
+    const {match, history} = this.props;
+    const self = this;
+    // Make a request for a user with a given ID
+    axios.get(`/api/${match.params.city}/${match.params.category}`)
+      .then(function (response) {
+        // handle success
+        self.setState({
+          itemsData: response.data
+        }, () => {
+          console.log(self.state);
+        })
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .finally(function () {
+        // always executed
+      });
+  }
   viewLoop = () => {
-    let itemDirectory = [{price: '8920', img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.oRsEFTzY9tftKsDjpQmapwHaFj%26pid%3DApi&f=1', title: 'BMW', city: 'ten-mile'}, {price: '4420', img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs-media-cache-ak0.pinimg.com%2F736x%2Fdc%2Fab%2F4d%2Fdcab4de9c8c61d24878751663bd49141--ital-food-recipes-ital-food-rasta.jpg&f=1&nofb=1', title: 'BMW', city: 'Nyc'},{price: '8920', img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.hA0NT8xm9Rfbc1f1GlnbAwHaE8%26pid%3DApi&f=1', title: 'BMW', city: 'Amsterdam'},{price: '8920', img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.gzCISLGnF136A2xit-KHDQHaE7%26pid%3DApi&f=1', title: 'BMW', city: 'Morant Bay'}];
-    return itemDirectory.map((entry, index) => {
-      console.log(itemDirectory)
-      return (
-        <div className={`item`}>
-          <div className={`img`}>
-            <div className={`price`}>
-              {entry.price}
+    if(this.state.itemsData != undefined) {
+      return this.state.itemsData.map((item, i) => {
+        return (
+          <div className={`item`}>
+            <div className={`img`}>
+              <div className={`price`}>
+                {item.price}
+              </div>
+              <img src={this.state.itemsData != undefined ? item.image: 'picture'}  />
             </div>
-            <img src={entry.img} alt={"ital food"} />
+            <div className={`details`}>
+              <h5>{item.title} <span class="lnr lnr-diamond"></span></h5>
+              <h6>{item.city}</h6>
+            </div>
           </div>
-          <div className={`details`}>
-            <h5>{entry.title} <span class="lnr lnr-diamond"></span></h5>
-            <h6>{entry.city}</h6>
-          </div>
-        </div>
-      )
-    })
+        )
+      })
+    }
+
   }
   showMakeModelDropdown = () => {
     const {match, location, history} = this.props;

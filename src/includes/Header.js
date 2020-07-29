@@ -26,9 +26,9 @@ export default class Header extends Component {
           citiesData: response.data,
           selectedCity: city[0].title
         }, () => {
-          console.log(self.state);
+          // console.log(self.state);
         })
-        console.log(response.data);
+        // console.log(response.data);
       })
       .catch(function (error) {
         // handle error

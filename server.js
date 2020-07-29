@@ -20,9 +20,13 @@ app.get('/api/cities', (req, res) => {
 app.get('/api/:city', (req, res) => {
   res.json(categoriesData);
 });
-//This shows all the items for a city
-app.get('/api/:city/:categories', (req, res) => {
-  res.json(categoriesData);
+//This shows all the items for a category
+app.get('/api/:city/:category', (req, res) => {
+  console.log(req.params.city);
+  const newData = itemsData.filter((item) => {
+    return item.city == req.params.city && item.category == req.params.category
+  })
+  res.json(newData);
 });
 // show all the items for that listing example:electronics
 app.get('/api/:city/:categories/:listing', (req, res) => {
