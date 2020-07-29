@@ -32,6 +32,11 @@ header{
       justify-content: center;
       align-items: center;
       font-size: 2rem;
+      color: white;
+      text-decoration: none;
+      &:hover{
+        cursor:grabbing;
+      }
     }
 
     .city-dropdown{
@@ -67,7 +72,7 @@ header{
         }
     }
   }
-
+}
   .right-menu{
     display: flex;
 
@@ -113,6 +118,4 @@ header{
 .container{
   max-width: 1300px;
   margin: 0 auto;
-}
-
 }
