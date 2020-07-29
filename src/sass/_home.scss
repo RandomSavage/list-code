@@ -14,11 +14,13 @@
     margin-bottom: 70px;
     .categories{
       .title{
+        display: block;
         color: #fff;
         font-size: 1.3rem;
         font-weight: 700;
         margin-bottom: 1rem;
         text-align: center;
+        text-decoration: none;
         &.point{
           cursor: pointer;
         }

@@ -39,6 +39,12 @@ export default class Home extends Component {
       });
   }
   loopCategories = () => {
+    //brought these variables to this method so we can use them in dropdown
+    const{match, history} = this.props
+    if(match.params.city == undefined){
+      history.push('/nyc')
+    }
+
     if(this.state.categoriesData != '') {
       return this.state.categoriesData.map((category, i) => {
         const loopListings = () => {
@@ -52,7 +58,7 @@ export default class Home extends Component {
         }
         return(
           <div key={i} className={`categories`}>
-            <div className={`title  ${category.title == 'resumes' ? 'point' : ''}`}>{category.title}</div>
+            <a href={`/${match.params.city}/${category.title}`} className={`title  ${category.title == 'resumes' ? 'point' : ''}`}>{category.title}</a>
             <div className={`group-links ${(category.title == 'jobs' || category.title == 'housing' || category.title == 'services' || category.title == 'for sale') ? 'single-col' : ''}`}>
               {loopListings()}
             </div>
@@ -64,10 +70,12 @@ export default class Home extends Component {
     }
 
   }
+
   loopTags = () => {
     let testTags = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
     return testTags.map((item) => <div key={item} className={`tag`}>Yehoud I <br /> likkle zion</div>);
   }
+
   render() {
     return (
       <div className={`container`}>
