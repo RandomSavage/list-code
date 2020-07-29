@@ -154,7 +154,7 @@ module.exports = [
     ]
   },
   {
-    title: "for sale",
+    title: "for-sale",
     listings: [
       {
         name: 'antiques',
