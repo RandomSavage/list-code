@@ -6,7 +6,13 @@ export default class Category extends Component {
   constructor() {
     super()
     this.state = {
-      name: 'Joe'
+      min_price: 0,
+      max_price: 10000,
+      sort: 'newest',
+      select_view: 'gallery',
+      miles: 5,
+      make: 'Lexus',
+      model: '190E'
     }
   }
   componentWillMount() {
@@ -35,7 +41,7 @@ export default class Category extends Component {
     if(this.state.itemsData != undefined) {
       return this.state.itemsData.map((item, i) => {
         return (
-          <div className={`item`}>
+          <div className={`item`} key={i}>
             <div className={`img`}>
               <div className={`price`}>
                 {item.price}
@@ -59,20 +65,33 @@ export default class Category extends Component {
         <div className={`make-model-comp`}>
           <div className="form-group make">
             <label>Make</label>
-            <select name="make" className={`make`}>
+            <select name="make" className={`make`} onChange={this.handleChange} value={this.state.make}>
               <option value="BMW">BMW</option>
+              <option value="Honda">Honda</option>
+              <option value="Lexus">Lexus</option>
             </select>
           </div>
           <div className="form-group model">
             <label>Model</label>
-            <select name="model" className={`model`}>
+            <select name="model" className={`model`} onChange={this.handleChange} value={this.state.model}>
               <option value="190E">190E</option>
+              <option value="Accord">Accord</option>
+              <option value="RX300">Rx300</option>
             </select>
           </div>
         </div>
       )
     }
+  }
+  handleChange = (event) => {
+    const name = event.target.name
+    const value = (event.target.type == 'checkbox') ? event.target.checked : event.target.value
 
+    this.setState({
+      [name]: value
+    }, () => {
+      console.log(this.state)
+    })
   }
   render() {
     const {match, location, history} = this.props;
@@ -84,19 +103,25 @@ export default class Category extends Component {
             <div className="form-group price">
               <label>Price</label>
               <div className={`min-max`}>
-                <select name="min-price" className={`min-price`}>
+                <select name="min_price" className={`min-price`} onChange={this.handleChange} value={this.state.min_price}>
                   <option value="0">0</option>
-                </select>
-                <select name="max-price" className={`max-price`}>
                   <option value="1000">1000</option>
+                  <option value="5000">5000</option>
+                </select>
+                <select name="max_price" className={`max-price`} onChange={this.handleChange} value={this.state.max_price}>
+                  <option value="1000">1000</option>
+                  <option value="5000">5000</option>
+                  <option value="10000">10000</option>
                 </select>
               </div>
             </div>
             {this.showMakeModelDropdown()}
             <div className="form-group miles">
               <label>Miles From Zip</label>
-              <select name="miles" className={`miles`}>
-                <option value="190E">190E</option>
+              <select name="miles" className={`miles`} onChange={this.handleChange} value={this.state.miles}>
+                <option value="5">5</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
               </select>
             </div>
             <div className="form-group button">
@@ -110,7 +135,7 @@ export default class Category extends Component {
               <div className={`white-box`}>
                 <section className={`change-view`}>
                 <div className="form-group view-dropdown">
-                  <select name="select-view" className={`select-view`}>
+                  <select name="select_view" className={`select-view`} onChange={this.handleChange} value={this.state.select_view}>
                     <option value="gallery">Gallery View</option>
                     <option value="list">List View</option>
                     <option value="thumb">Thumbnail View</option>
@@ -118,7 +143,7 @@ export default class Category extends Component {
                   </select>
                 </div>
                 <div className="form-group sort-dropdown">
-                  <select name="sort-dropdown" className={`sort-dropdown`}>
+                  <select name="sort" className={`sort-dropdown`} onChange={this.handleChange} value={this.state.sort}>
                     <option value="newest">Newest</option>
                     <option value="Oldest">Oldest</option>
                   </select>
